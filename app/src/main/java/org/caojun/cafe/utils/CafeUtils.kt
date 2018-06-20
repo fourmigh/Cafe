@@ -128,7 +128,7 @@ object CafeUtils {
         if (cafe.size != materials.size) {
             return false
         }
-        if (cafe == Formula.arrays[Cafe.Americano] || cafe == Formula.arrays[Cafe.LongBlack]) {
+        if (cafe.contentEquals(Formula.arrays[Cafe.Americano]!!) || cafe.contentEquals(Formula.arrays[Cafe.LongBlack]!!)) {
             //美式咖啡和黑咖啡配料一样，只是加入的顺序不同
             for (i in cafe.indices) {
                 if (cafe[i] == materials[i]) {

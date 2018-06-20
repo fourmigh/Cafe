@@ -10,6 +10,7 @@ import kotlinx.android.synthetic.main.fragment_material.*
 import org.caojun.cafe.R
 import org.caojun.cafe.utils.CafeUtils
 import org.caojun.cafe.utils.GameUtils
+import org.caojun.listener.OnDoubleClickListener
 import org.caojun.utils.ActivityUtils
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.yesButton
@@ -65,6 +66,12 @@ class MaterialFragment: BaseFragment() {
                         doBaike(getString(cafeId))
                         true
                     }
+
+                    ivCafe.setOnTouchListener(OnDoubleClickListener(object : OnDoubleClickListener.DoubleClickCallback {
+                        override fun onDoubleClick() {
+                            ActivityUtils.shareText(context!!, getString(R.string.app_name), getString(R.string.share_cafe, getString(R.string.app_name), getString(CafeUtils.getResId(cafe))))
+                        }
+                    }))
                 }
             }
         }
@@ -94,7 +101,7 @@ class MaterialFragment: BaseFragment() {
                 ActivityUtils.copyClipboardData(context!!, title)
                 ActivityUtils.shareImage(context!!, title, resId)
             }
-            negativeButton(R.string.close, {})
+            negativeButton(R.string.close) {}
         }?.show()
     }
 }

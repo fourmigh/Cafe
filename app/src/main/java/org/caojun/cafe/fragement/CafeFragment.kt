@@ -10,6 +10,9 @@ import kotlinx.android.synthetic.main.fragment_cafe.*
 import org.caojun.cafe.R
 import org.caojun.cafe.utils.CafeUtils
 import org.caojun.cafe.utils.GameUtils
+import org.caojun.listener.OnDoubleClickListener
+import org.caojun.utils.ActivityUtils
+
 
 class CafeFragment: BaseFragment() {
 
@@ -73,6 +76,12 @@ class CafeFragment: BaseFragment() {
                         doBaike(getString(resId))
                         true
                     }
+
+                    ivCafe.setOnTouchListener(OnDoubleClickListener(object : OnDoubleClickListener.DoubleClickCallback {
+                        override fun onDoubleClick() {
+                            ActivityUtils.shareText(context!!, getString(R.string.app_name), getString(R.string.share_cafe, getString(R.string.app_name), getString(CafeUtils.getResId(cafe))))
+                        }
+                    }))
                 }
             }
         }
@@ -82,11 +91,11 @@ class CafeFragment: BaseFragment() {
         } catch (e: Exception) {
         }
 
-        ivCafe.setOnClickListener({
+        ivCafe.setOnClickListener {
             ivFull.visibility = View.VISIBLE
-            ivFull.setOnClickListener({
+            ivFull.setOnClickListener {
                 ivFull.visibility = View.GONE
-            })
-        })
+            }
+        }
     }
 }

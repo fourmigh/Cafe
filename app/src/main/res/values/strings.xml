@@ -66,4 +66,6 @@
     <string name="share">Share</string>
     <string name="close">Close</string>
     <string name="eggs_info">I found a colored egg in [%s]!</string>
+    <!-- Share -->
+    <string name="share_cafe">In [%s], I found the formula of %s.</string>
 </resources>
