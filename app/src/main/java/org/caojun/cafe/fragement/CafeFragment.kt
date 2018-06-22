@@ -58,8 +58,8 @@ class CafeFragment: BaseFragment() {
                     for (i in materials.indices) {
                         val checkBox = CheckBox(context)
                         checkBox.isChecked = true
-                        checkBox.setOnCheckedChangeListener { buttonView, isChecked ->
-                            if (!isChecked) {
+                        checkBox.setOnCheckedChangeListener { buttonView, _isChecked ->
+                            if (!_isChecked) {
                                 buttonView.isChecked = true
                             }
                         }
