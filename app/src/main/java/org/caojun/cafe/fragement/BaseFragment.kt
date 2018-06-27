@@ -19,6 +19,7 @@ open class BaseFragment: Fragment() {
             val index = RandomUtils.getRandom(1, urls.size - 1)
             url = urls[index]
         }
-        WebViewDialog.show(activity as Activity, url + text, null, null)
+//        WebViewDialog.show(activity as Activity, url + text, null, null)
+        WebViewDialog.show(activity as Activity, url + text)
     }
 }

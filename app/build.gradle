@@ -8,10 +8,10 @@ android {
 
     defaultConfig {
         applicationId "org.caojun.cafe"
-        minSdkVersion 14
+        minSdkVersion 18
         targetSdkVersion rootProject.ext.sdkVersion
-        versionCode 2
-        versionName "1.1.0"
+        versionCode 3
+        versionName "1.1.1"
 
     }
 
